@@ -1,19 +1,21 @@
-// const startButton = document.getElementById('start-btn')
+function startGame() {
+
+const startButton = document.getElementById('start-btn')
 // const nextButton = document.getElementById('next-btn')
 
 // const questionContainer = document.getElementById('question-container')
 
 let player = 0, quiz, test_status, question, answer, answers, an1, an2, an3, correct = 0;
 
-//startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startGame)
 // nextButton.addEventListener('click', () =>{
     
     
 // })
 
-// function startGame() {
-// console.log('Started')
-// startButton.classList.add('hide')
+ 
+ console.log('Started')
+ startButton.classList.add('hide')
 
 
 // }
@@ -44,10 +46,17 @@ question: "What gets stolen from Mr. Pitt's lobby?",
     b: 'Maestro', 
     c: 'Judge', 
     answer: 'b'
+},
+{question: "Who is Jerry's favorite superhero?",
+    a: 'Batman',
+    b: 'Ironman',
+    c: 'Superman',
+    answer: 'c'
+
+}
 
 
-
-}]
+]
 // const SCORE_POINTS = 100
 // const MAX_QUESTIONS = 3
 
@@ -122,6 +131,20 @@ function get(x){
       //each time there is a correct answer this value increases
       correct++;
     }
+    function setStatusClass(element, correct) {
+        clearStatusClass(element)
+        if (correct) {
+            element.classList.add('correct')
+        } else {
+            element.classList.add('wrong')
+        }
+     }
+     function clearStatusClass(element) {
+        element.classList.remove('correct')
+        element.classList.remove('wrong')
+     }
+     
+    
     // changes position of which character user is on
     player++;
     // then the renderQuestion function runs again to go to next question
@@ -129,3 +152,6 @@ function get(x){
   }
   // Add event listener to call renderQuestion on page load event
   window.addEventListener("load", renderQuestion);
+
+  document.getElementById('resetButton').addEventListener('click',startGame);
+}
