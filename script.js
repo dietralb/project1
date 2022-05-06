@@ -1,22 +1,22 @@
-function startGame() {
 
-const startButton = document.getElementById('start-btn')
+
+//const startButton = document.getElementById('start-btn')
 // const nextButton = document.getElementById('next-btn')
 
 // const questionContainer = document.getElementById('question-container')
 
 let player = 0, quiz, test_status, question, answer, answers, an1, an2, an3, correct = 0;
 
-startButton.addEventListener('click', startGame)
+//startButton.addEventListener('click', startGame)
 // nextButton.addEventListener('click', () =>{
     
     
 // })
-
+// function startGame() {
  
- console.log('Started')
- startButton.classList.add('hide')
-
+//  console.log('Started')
+//  startButton.classList.add('hide')
+//  window.addEventListener("load", renderQuestion);
 
 // }
 
@@ -86,6 +86,12 @@ question: "What gets stolen from Mr. Pitt's lobby?",
 //    answerButton.dataset.correct = answer.correct
 //    document.querySelector('#answer-buttons').appendChild(answerButton)
 // })
+ PlaySound = function () {
+    let audio = new Audio('https://www.myinstants.com/media/sounds/seinfeld-theme_1.mp3');
+  audio.loop = false;
+    audio.play();
+}
+
 
 
 function get(x){
@@ -96,7 +102,7 @@ function get(x){
     quiz = get("quiz");
     if(player >= questions.length){
       quiz.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
-      get("test_status").innerHTML = "Game Over";
+      get("test_status").innerHTML = "Serenity Now!!!";
       // resets the variable to allow users to restart the test
       player = 0;
       correct = 0;
@@ -130,6 +136,9 @@ function get(x){
     if(choice == questions[player].answer){
       //each time there is a correct answer this value increases
       correct++;
+      console.log('Correct Answer');
+    }else {
+        console.log('Wrong Answer')
     }
     function setStatusClass(element, correct) {
         clearStatusClass(element)
@@ -153,5 +162,6 @@ function get(x){
   // Add event listener to call renderQuestion on page load event
   window.addEventListener("load", renderQuestion);
 
-  document.getElementById('resetButton').addEventListener('click',startGame);
-}
+//   document.getElementById('resetButton').addEventListener('click',startGame);
+//   startGame()
+// }
