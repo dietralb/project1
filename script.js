@@ -1,7 +1,7 @@
 
 
 const startButton = document.getElementById('start-btn')
-// const nextButton = document.getElementById('next-btn')
+
 
 // const questionContainer = document.getElementById('question-container')
 
@@ -68,35 +68,10 @@ answer: 'a'
 
 
 ]
-// const SCORE_POINTS = 100
-// const MAX_QUESTIONS = 3
-
-// startGame = () => {
-//     questionCounter = 0;
-//     score = 0;
-//     availableQuestions = [...questions]
-//     getNewQuestion()
-// }
-
-// getNewQuestion = () => {
-//     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-//         localStorage.setItem('mostRecentScore', score)
-//         return window.location.assign('/end.html')
-//     }
-// }
 
 
-// let questionNumber = 0
 
-//questionContainer.innerText = questions[0];
-// let questionText = document.querySelector('#question')
-// questionText.innerHTML = questions[questionNumber].question;
-// questions[0].answers.forEach(function(answer){
-//    let answerButton = document.createElement('button')
-//    answerButton.innerHTML = answer.text;
-//    answerButton.dataset.correct = answer.correct
-//    document.querySelector('#answer-buttons').appendChild(answerButton)
-// })
+
  PlaySound = function () {
     let audio = new Audio('https://www.myinstants.com/media/sounds/seinfeld-theme_1.mp3');
   audio.loop = false;
@@ -176,8 +151,8 @@ function get(x){
 
 
    document.getElementById('resetButton')
-   startGame.addEventListener('click',startGame());
-  startGame()
+//    startGame.addEventListener('click',startGame());
+//   startGame()
  
 
 
