@@ -1,6 +1,6 @@
 
 
-//const startButton = document.getElementById('start-btn')
+const startButton = document.getElementById('start-btn')
 // const nextButton = document.getElementById('next-btn')
 
 // const questionContainer = document.getElementById('question-container')
@@ -8,17 +8,14 @@
 let player = 0, quiz, test_status, question, answer, answers, an1, an2, an3, correct = 0;
 
 //startButton.addEventListener('click', startGame)
-// nextButton.addEventListener('click', () =>{
-    
-    
-// })
-// function startGame() {
- 
-//  console.log('Started')
-//  startButton.classList.add('hide')
-//  window.addEventListener("load", renderQuestion);
 
-// }
+//  function startGame() {
+ 
+  //console.log('Started')
+//  startButton.classList.add('hide')
+//   window.addEventListener("load", renderQuestion);
+
+
 
 
 
@@ -52,6 +49,20 @@ question: "What gets stolen from Mr. Pitt's lobby?",
     b: 'Ironman',
     c: 'Superman',
     answer: 'c'
+
+},
+{question: "George tells Jerry the Chinese have discovered the cure for ___",
+a: 'Insomnia',
+b: 'Baldness',
+c: 'Ulcers',
+answer: 'b'
+
+},
+{question: "What instrument does Elaine's boyfriend John Germaine play?",
+a: 'Saxophone',
+b: 'Flute',
+c: 'Guitar',
+answer: 'a'
 
 }
 
@@ -97,16 +108,16 @@ question: "What gets stolen from Mr. Pitt's lobby?",
 function get(x){
     return document.getElementById(x);
   }
-  // this function renders a question for display on the page
+  
   function renderQuestion(){
     quiz = get("quiz");
     if(player >= questions.length){
       quiz.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
       get("test_status").innerHTML = "Serenity Now!!!";
-      // resets the variable to allow users to restart the test
+      
       player = 0;
       correct = 0;
-      // stops rest of renderQuestion function running when test is completed
+      
       return false;
     }
     get("test_status").innerHTML = "Question "+(player+1)+" of "+questions.length;
@@ -115,32 +126,32 @@ function get(x){
     an1 = questions[player].a;
     an2= questions[player].b;
     an3 = questions[player].c;
-    // display the question
+    
     quiz.innerHTML = "<h3>"+question+"</h3>";
-    // display the answer options
-    // the += appends to the data we started on the line above
+
+    
     quiz.innerHTML += "<label> <input type='radio' name='choices' value='a'> "+an1+"</label><br>";
     quiz.innerHTML += "<label> <input type='radio' name='choices' value='b'> "+an2+"</label><br>";
     quiz.innerHTML += "<label> <input type='radio' name='choices' value='c'> "+an3+"</label><br><br>";
     quiz.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
   }
   function checkAnswer(){
-    // use getElementsByName because we have an array which it will loop through
+    
     choices = document.getElementsByName("choices");
     for(var i=0; i<choices.length; i++){
       if(choices[i].checked){
         choice = choices[i].value;
       }
     }
-    // checks if answer matches the correct choice
+    
     if(choice == questions[player].answer){
-      //each time there is a correct answer this value increases
+      
       correct++;
       console.log('Correct Answer');
     }else {
         console.log('Wrong Answer')
     }
-    function setStatusClass(element, correct) {
+    function test_status(element, correct) {
         clearStatusClass(element)
         if (correct) {
             element.classList.add('correct')
@@ -154,14 +165,27 @@ function get(x){
      }
      
     
-    // changes position of which character user is on
+    
     player++;
-    // then the renderQuestion function runs again to go to next question
+    
     renderQuestion();
   }
-  // Add event listener to call renderQuestion on page load event
+  
   window.addEventListener("load", renderQuestion);
 
-//   document.getElementById('resetButton').addEventListener('click',startGame);
-//   startGame()
-// }
+
+
+   document.getElementById('resetButton')
+   startGame.addEventListener('click',startGame());
+  startGame()
+ 
+
+
+
+
+
+
+
+
+//credit:https://www.myinstants.com/media/sounds/seinfeld-theme_1.mp3
+//credit:https://www.codegrepper.com/code-examples/html/how+to+add+sound+javascript
