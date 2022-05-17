@@ -5,6 +5,7 @@ Overview: Player answers questions about the tv show Seinfeld. At the end of the
 
 technologies used: CSS, HTML, and JavaScript
 
+Challenges: Getting a functioning start button. Also I want to add an image to come up with correct and wrong answer.
 
 User Stories: 
 User Answers multiple choice questions.

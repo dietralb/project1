@@ -150,7 +150,7 @@ function get(x){
 
 
 
-   document.getElementById('resetButton')
+   document.getElementById('start-btn')
 //    startGame.addEventListener('click',startGame());
 //   startGame()
  
@@ -164,3 +164,7 @@ function get(x){
 
 //credit:https://www.myinstants.com/media/sounds/seinfeld-theme_1.mp3
 //credit:https://www.codegrepper.com/code-examples/html/how+to+add+sound+javascript
+//credit:https://www.youtube.com/watch?v=rCVqQ8NKU2M
+//credit:https://www.youtube.com/watch?v=f4fB9Xg2JEY
+//credit:https://coding.degree/javascript-quiz-tutorial/
+//credit:https://www.youtube.com/watch?v=riDzcEQbX6k
